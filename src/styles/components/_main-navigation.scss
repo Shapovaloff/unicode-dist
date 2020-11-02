@@ -1,0 +1,240 @@
+.main-navigation {
+  flex-wrap: nowrap !important;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+
+  &.js-processed {
+    opacity: 1;
+  }
+
+  &.js-enabled {
+    overflow: visible;
+  }
+
+  &.js-enabled .main-navigation__item {
+    flex-grow: 1;
+  }
+
+  & .js-dropdown-menu-button {
+    cursor: pointer;
+    position: relative;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    transition-property: background-color;
+
+    &.js-enabled {
+      @include hover-focus-active {
+        background-color: $pink;
+
+        & .js-dropdown-menu-list {
+          display: block;
+        }
+      }
+
+      &.js-processed {
+        visibility: visible;
+        pointer-events: initial;
+      }
+    }
+  }
+
+  & .js-dropdown-menu-list {
+    width: auto;
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 0;
+    background-color: $purple-dark;
+    
+    & .main-navigation__link {
+      text-align: left;
+    }
+  }
+}
+
+.main-navigation__list {
+  @include reset-list-styles();
+  display: flex;
+  flex-wrap: nowrap;
+  width: calc(100% + 48px);
+  margin-left: -24px;
+}
+
+.main-navigation__item {
+  flex-shrink: 0;
+}
+
+.menu-mobile-language {
+  display: none;
+}
+
+.main-navigation__link {
+  display: block;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-align: center;
+  color: $white;
+  font-weight: 500;
+  white-space: nowrap;
+  @include default-transition(background-color);
+
+  &--current {
+    background-color: $purple-highlight;
+  }
+
+  @include hover-focus-active {
+    background-color: $pink;
+  }
+}
+
+@include media(tablet) {
+  .main-navigation__link {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+}
+
+@include media(mobile) {
+  .menu-mobile-language {
+    display: block;
+    background-color: #fff;
+  }
+
+  .menu-back__list {
+    @include reset-list-styles();
+    transform: translateX(102%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    z-index: 2;
+    overflow-y: scroll;
+
+    &--active {
+      transform: translateX(0%);
+    }
+  }
+
+  .menu-back__link {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    text-align: left;
+    color: inherit;
+    border-bottom: 1px solid #dedede;
+    font-family: inherit;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1;
+
+    &--btn {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: none;
+      border-top: 1px solid #dedede;
+      background-color: #894d9a;
+      color: #fff;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+
+      & svg {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .menu-back__flag {
+    margin-right: 8px;
+  }
+
+  .main-navigation.container {
+    position: relative;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .menu-item-wrapper__link {
+    border:none;
+    outline: none;
+    background-color: transparent;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #894d9a;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 14px;
+    border-top: 1px solid #dedede;
+  }
+
+  .menu-mobile-language__current {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .menu-mobile-language__current-svg {
+    margin-left: 8px;
+    color: #fff;
+  }
+
+  .menu-back__flag {
+    height: 20px;
+    width: auto;
+  }
+
+  .main-navigation__list {
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .main-navigation__link {
+    padding: 16px 15px 15px;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: left;
+    font-weight: normal;
+    border-bottom: 1px solid #dedede;
+
+    &:hover,
+    &:focus {
+      background: none;
+    }
+
+    &--current {
+      background-color: #e6e6e6;
+      
+      &:hover,
+      &:focus {
+        background-color: #e6e6e6;
+      }
+    }
+  }
+
+  .main-navigation {
+    overflow-y: scroll;
+    height: 100%;
+  }
+}

@@ -1,0 +1,157 @@
+.holiday-banner {
+  background-color: $grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+
+  height: 100%;
+  padding: 8px 35px;
+
+  user-select: text;
+  text-decoration: none;
+
+  opacity: 1;
+
+  font-size: 18px;
+  font-weight: bold;
+  
+
+  @include default-transition();
+  @include hover-focus-active {
+    opacity: 0.8;
+  }
+
+  & span {
+    white-space: nowrap;
+    max-width: 30px;
+    margin: 0 6px;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.holiday-banner--pink {
+  color: #894f9a;
+  background: radial-gradient(718.08px at 50.13% 50%, #ffcfe3 0%, #ffb2e9 100%);
+}
+
+// 23 февраля
+.holiday-banner--camouflage {
+  color: #ffffff;
+  background: #444f27;
+}
+
+// День Победы
+.holiday-banner--red {
+  color: #ffffff;
+  background: radial-gradient(187.00px at 50.13% 50%, #ff2f48 0%, #e22c2c 100%);
+}
+
+// День святого Патрика
+.holiday-banner--green {
+  color: #ffffff;
+  background: radial-gradient(187.00px at 50.13% 50%, #3cba92 0%, #0ba360 100%);
+}
+
+// День космонавтики
+.holiday-banner--cosmos {
+  color: #000000;
+  background: radial-gradient(187.00px at 50.13% 50%, #cff6ff 0%, #b9c0ff 100%);
+}
+
+// 1 апреля
+.holiday-banner--yellow {
+  color: #ff4d00;
+  background: radial-gradient(187.00px at 50.13% 50%, #f6d365 0%, #feab5f 100%);
+}
+
+// 1 сентября
+.holiday-banner--darkgreen {
+  color: #ffffff;
+  background: radial-gradient(187.00px at 50.13% 50%, #205e45 0%, #184935 100%);
+}
+
+// Черная пятница
+.holiday-banner--black {
+  color: #ffffff;
+  background: radial-gradient(187.00px at 50.13% 50%, #262626 0%, #000000 100%);
+}
+
+// Хэллоуин
+.holiday-banner--orange {
+  color: #ffffff;
+  background: radial-gradient(187.00px at 50.13% 50%, #f77700 0%, #e84500 100%);
+}
+
+.holiday-banner__text {
+  margin: 0 35px;
+  color: inherit;
+
+  text-align: center;
+}
+
+@include media(desktop-medium) {
+  .holiday-banner {
+    justify-content: flex-start;
+
+    & span {
+      order: 2;
+    }
+  }
+
+  .holiday-banner__text {
+    margin-right: 27px;
+    margin-left: 0;
+  }
+}
+
+@include media(desktop-medium) {
+  .holiday-banner {
+    justify-content: center;
+
+    padding: 0;
+
+    & span {
+      order: unset;
+    }
+  }
+
+  .holiday-banner__text {
+    margin-right: 35px;
+    margin-left: 35px;
+  }
+}
+
+@include media(tablet) {
+  .holiday-banner {
+    min-height: 40px;
+    font-size: 14px;
+  }
+}
+
+// @include media-phone {
+//   .holiday {
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     padding: 0;
+//   }
+
+//   .holiday__link {
+//     padding: 8px 16px;
+
+//     line-height: 16px;
+
+//     & span {
+//       max-width: 18px;
+//     }
+//   }
+
+//   .holiday__text {
+//     margin: 0 auto;
+
+//     line-height: inherit;
+//   }
+// }

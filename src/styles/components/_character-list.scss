@@ -1,0 +1,38 @@
+.character-list__list {
+  @include reset-list-styles();
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-row-gap: 16px;
+}
+
+.character-list__item {
+  height: 116px;
+  margin-bottom: 16px;
+}
+
+@include media(tablet) {
+  .character-list__list {
+    display: grid;
+    grid-row-gap: 8px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@include media(mobile) {
+  .character-list__title {
+    margin: 0;
+    grid-row-gap: 0;
+  }
+}
+
+@include media(mobile580) {
+  .character-list__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@include media(mobile370) {
+  .character-list__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

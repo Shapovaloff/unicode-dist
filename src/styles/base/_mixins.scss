@@ -1,0 +1,111 @@
+/**
+ * Helper mixins
+*/
+
+// Media queries
+$desktop-small: 1172px;
+$desktop-medium: 1599px;
+$tablet: 1023px;
+$mobile: 768px;
+$mobile580: 580px;
+$mobile460: 460px;
+$mobile370: 370px;
+
+$breakpoints: (
+  desktop-small: $desktop-small,
+  desktop-medium: $desktop-medium,
+  tablet: $tablet,
+  mobile: $mobile,
+  mobile580: $mobile580,
+  mobile460: $mobile460,
+  mobile370: $mobile370,
+);
+
+@mixin media($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Typography
+@mixin heading-1() {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+@mixin heading-2() {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+@mixin subtitle() {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+@mixin body-2($font-weight: normal) {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: $font-weight;
+}
+
+@mixin caption($font-weight: normal) {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: $font-weight;
+}
+
+// Text selection
+@mixin text-selection($color-selection, $color-selection-bg) {
+  ::-moz-selection { // sass-lint:disable-line no-vendor-prefixes
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+}
+
+// Background image helper
+@mixin background-image-settings($position, $repeat: no-repeat, $size: initial) {
+  background-position: $position;
+  background-repeat: $repeat;
+  background-size: $size;
+}
+
+// Reset default list styles
+@mixin reset-list-styles() {
+  padding: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Shortcut styling :hover, :active, :focus states
+@mixin hover-focus-active () {
+  &:hover,
+  &:focus,
+  &:active { @content }
+}
+
+// Default ease-in-out transition
+@mixin default-transition($property: all) {
+  transition: $property 0.3s ease-in-out;
+}

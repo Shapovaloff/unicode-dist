@@ -1,0 +1,19 @@
+.container {
+  max-width: 970px;
+  margin: 0 auto;
+
+  @include media(desktop-medium) {
+    max-width: 946px;
+    margin: 0 24px;
+  }
+
+  @include media(desktop-small) {
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  @include media(tablet) {
+    max-width: calc(100% - 32px);
+    margin: 0 16px;
+  }
+}

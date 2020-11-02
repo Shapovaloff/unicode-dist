@@ -1,0 +1,50 @@
+html {
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: $black;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $grey;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+input {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #6c94c4;
+  @include default-transition(color);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+h1 {
+  @include heading-1();
+  margin: 0 0 16px ;
+}
+
+h2 {
+  @include heading-2();
+  margin: 20px 0;
+}
