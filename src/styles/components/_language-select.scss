@@ -30,11 +30,20 @@
     transition-delay: 0s;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    
+    transition: transform 0.2s;
+        
     & .language-select__arrow path{
       fill: $black;
     }
   }
+}
+
+.language-select__arrow {
+  transition: transform 0.2s;
+}
+
+.language-select__open-btn--active .language-select__arrow {
+  transform: rotate(180deg);
 }
 
 .language-select__open-btn, .language-select__link {

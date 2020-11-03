@@ -1,4 +1,5 @@
 import tippy, { delegate } from 'tippy.js';
+import ClipboardJS from 'clipboard';
 
 // TODO: move inside separate utils file
 const UINode = document.querySelector('#js-char-popup-ui');
@@ -57,7 +58,7 @@ function prepareContent(reference) {
           ? `<div class="char__copy">
             <input type="button" class="b-copy-char-button b-copy-char-button--block symbol-copy"
               data-goal="copy_symbol"
-              data-copy="${data.symbol}"
+              data-clipboard-text="${data.symbol}"
               data-symbol="${data.symbol}"
               value="${UINode.dataset.buttonText}">
           </div>` : ''}
@@ -118,6 +119,10 @@ export default function characterPopup() {
         }
       });
     } else {
+      const openTooltip = () => {
+        console.log(2)
+      }
+
       delegate(popupArea, {
         theme: 'light-border',
         interactive: true,
@@ -131,6 +136,31 @@ export default function characterPopup() {
         content(reference) {
           return prepareContent(reference);
         },
+        onShown() {
+          const button = document.querySelector('.b-copy-char-button');
+          let clipboard = new ClipboardJS(button);
+          const openTooltip = () => {
+            const symbol = button.dataset.clipboardText;
+            
+            let popup = document.querySelector('.set-v2-popup')
+            let symbolCopy = popup.querySelector('.set-v2-popup-symbol');
+            symbolCopy.textContent = symbol;
+            popup.classList.add('set-v2-popup--active');
+            
+            setTimeout(() => {
+              popup.classList.remove('set-v2-popup--active')
+            }, 900)
+          }
+          if (button) {
+            button.addEventListener('click', openTooltip)
+          }
+        },
+        onHide() {
+          const button = document.querySelector('.b-copy-char-button');
+          if (button) {
+            button.removeEventListener('click', openTooltip)
+          }
+        }
       });
     }
   }
