@@ -13,6 +13,7 @@
   margin-left: 0;
 }
 
+
 .page-content__wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -68,5 +69,12 @@
 
   .page-content__wrapper {
     flex-direction: column;
+  }
+}
+
+
+@media  (min-width: 1600px) {
+  .page-content.container {
+    margin-left: auto;
   }
 }
