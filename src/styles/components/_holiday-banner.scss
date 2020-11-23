@@ -17,7 +17,7 @@
   font-weight: bold;
   
 
-  @include default-transition();
+  // @include default-transition();
   @include hover-focus-active {
     opacity: 0.8;
   }

@@ -11,6 +11,7 @@
 
 .page-content.container {
   margin-left: 0;
+  max-width: 970px;
 }
 
 
@@ -28,11 +29,16 @@
 .page-content__side {
   width: 216px;
   flex-shrink: 0;
-  margin-left: 16px;
+  margin-left: 21px;
 
   & h2 {
     line-height: 40px;
     margin-top: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 6px;
+    margin-bottom: 16px;
   }
 }
 

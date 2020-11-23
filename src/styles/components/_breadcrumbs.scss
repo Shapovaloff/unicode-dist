@@ -9,7 +9,7 @@
 .breadcrumbs__item {
   &:not(:last-child)::after {
     content: "›";
-    padding: 0 4px 0 2px;
+    padding: 0 3px 0 0;
     pointer-events: none;
     color: #B8BDC1;
   }
