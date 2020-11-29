@@ -2137,6 +2137,17 @@ button.swiper-pagination-bullet {
   width: auto;
 }
 
+.character-item__code {
+  font-family: "Roboto","Noto Sans",sans-serif;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.character-item__code:hover,
+.character-item__code:focus {
+  color: #894D9A;
+}
+
 .tippy-box[data-theme~=light-border] {
   background-color: #fff;
   background-clip: padding-box;

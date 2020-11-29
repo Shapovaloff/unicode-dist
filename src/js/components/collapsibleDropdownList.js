@@ -12,8 +12,10 @@ export default function collapsibleDropdownList() {
   const outOfBoundsItems = [];
 
   for (let i = menuItems.length - 1; i >= 0; i--) {
+    console.log(calculateRightBound(menuItems[i]))
     if (calculateRightBound(menuItems[i]) > headerMenuWrapper.offsetLeft + headerMenuWrapper.clientWidth) {
-      outOfBoundsItems.push(menuItems[i]);
+      console.log(headerMenuWrapper.clientWidth)
+      console.log(i)
     } else {
       i = -1;
     }

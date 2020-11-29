@@ -1,5 +1,5 @@
 // Your JS Code goes here
-import likely from 'ilyabirman-likely';
+// import likely from 'ilyabirman-likely';
 import collapsibleDropdownList from './components/collapsibleDropdownList';
 import initiateCharacterPopup from './components/charPopup';
 import openMobileMenu from './components/mobileMenu';
@@ -9,7 +9,7 @@ import scrollMenu from './components/scrollMenu';
 import tooltipSearch from './components/tooltipSearch';
 
 document.addEventListener('DOMContentLoaded', () => {
-  likely.initiate();
+  // likely.initiate();
   collapsibleDropdownList();
   initiateCharacterPopup();
   openMobileMenu();

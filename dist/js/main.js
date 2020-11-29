@@ -370,8 +370,11 @@ function collapsibleDropdownList() {
   var outOfBoundsItems = [];
 
   for (var i = menuItems.length - 1; i >= 0; i--) {
+    console.log(calculateRightBound(menuItems[i]));
+
     if (calculateRightBound(menuItems[i]) > headerMenuWrapper.offsetLeft + headerMenuWrapper.clientWidth) {
-      outOfBoundsItems.push(menuItems[i]);
+      console.log(headerMenuWrapper.clientWidth);
+      console.log(i);
     } else {
       i = -1;
     }
@@ -613,17 +616,15 @@ function tooltipSearch() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var ilyabirman_likely__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ilyabirman-likely */ "./node_modules/ilyabirman-likely/release/likely-commonjs.js");
-/* harmony import */ var ilyabirman_likely__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ilyabirman_likely__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_collapsibleDropdownList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/collapsibleDropdownList */ "./src/js/components/collapsibleDropdownList.js");
-/* harmony import */ var _components_charPopup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/charPopup */ "./src/js/components/charPopup.js");
-/* harmony import */ var _components_mobileMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/mobileMenu */ "./src/js/components/mobileMenu.js");
-/* harmony import */ var _components_language__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/language */ "./src/js/components/language.js");
-/* harmony import */ var _components_asideMobile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/asideMobile */ "./src/js/components/asideMobile.js");
-/* harmony import */ var _components_scrollMenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/scrollMenu */ "./src/js/components/scrollMenu.js");
-/* harmony import */ var _components_tooltipSearch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/tooltipSearch */ "./src/js/components/tooltipSearch.js");
+/* harmony import */ var _components_collapsibleDropdownList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/collapsibleDropdownList */ "./src/js/components/collapsibleDropdownList.js");
+/* harmony import */ var _components_charPopup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/charPopup */ "./src/js/components/charPopup.js");
+/* harmony import */ var _components_mobileMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/mobileMenu */ "./src/js/components/mobileMenu.js");
+/* harmony import */ var _components_language__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/language */ "./src/js/components/language.js");
+/* harmony import */ var _components_asideMobile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/asideMobile */ "./src/js/components/asideMobile.js");
+/* harmony import */ var _components_scrollMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/scrollMenu */ "./src/js/components/scrollMenu.js");
+/* harmony import */ var _components_tooltipSearch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tooltipSearch */ "./src/js/components/tooltipSearch.js");
 // Your JS Code goes here
-
+// import likely from 'ilyabirman-likely';
 
 
 
@@ -632,14 +633,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  ilyabirman_likely__WEBPACK_IMPORTED_MODULE_0___default.a.initiate();
-  Object(_components_collapsibleDropdownList__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_components_charPopup__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  Object(_components_mobileMenu__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  Object(_components_language__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  Object(_components_asideMobile__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  Object(_components_scrollMenu__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  Object(_components_tooltipSearch__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  // likely.initiate();
+  Object(_components_collapsibleDropdownList__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_components_charPopup__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_components_mobileMenu__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_components_language__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_components_asideMobile__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_components_scrollMenu__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_components_tooltipSearch__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
 
 /***/ })
